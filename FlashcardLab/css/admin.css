@@ -1,0 +1,35 @@
+﻿body {
+}
+
+td {
+    width: 0.1%;
+    white-space: nowrap;
+}
+
+#lblID {
+}
+
+.inpID {
+    width: 15%;
+}
+
+.table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+.txtbID {
+    width: 50%;
+}
+
+td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#regions{
+    width: 100%;
+    height: 500px;
+    display: none;
+}

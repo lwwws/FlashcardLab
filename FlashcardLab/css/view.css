@@ -1,0 +1,18 @@
+﻿body {
+}
+
+td{
+    text-align: center;
+    font-size: larger;
+    padding: 5px;
+}
+
+.danger{
+    color: red;
+}
+
+.square {
+    width: 20vh;
+    height: 20vh;
+    object-fit: cover;
+}

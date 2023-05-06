@@ -1,0 +1,706 @@
+﻿<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    <link rel="stylesheet" href="css/decks.css" />
+
+    <h1 class="jumbotron spaced bfield pink">My decks</h1>
+
+    <asp:Label ID="alert" CssClass="rfield spaced pink center" runat="server" Text=""></asp:Label>
+
+    <div class="container center">
+        <table class="table bfield spaced" id="deckForm">
+            <thead>
+                <tr>
+                    <th>name</th>
+                    <th>description</th>
+                    <th>language</th>
+                    <th>#</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td><asp:TextBox autocomplete="off" CssClass="form-control input-sm txt spaced" ID="nameDeck" runat="server"></asp:TextBox></td>
+                    <td><textarea class="form-control txt input-sm spaced no-resize" rows="5" cols="50" id="descriptionDeck" runat="server"></textarea></td>
+
+                    <td>
+                        <select id="language" runat="server" class="form-control input-sm txt">
+                            <option value="misc">Select Language</option>
+                            <option value="misc">Other</option>
+                            <option value="af">Afrikaans</option>
+                            <option value="sq">Albanian - shqip</option>
+                            <option value="am">Amharic - አማርኛ</option>
+                            <option value="ar">Arabic - العربية</option>
+                            <option value="an">Aragonese - aragonés</option>
+                            <option value="hy">Armenian - հայերեն</option>
+                            <option value="ast">Asturian - asturianu</option>
+                            <option value="az">Azerbaijani - azərbaycan dili</option>
+                            <option value="eu">Basque - euskara</option>
+                            <option value="be">Belarusian - беларуская</option>
+                            <option value="bn">Bengali - বাংলা</option>
+                            <option value="bs">Bosnian - bosanski</option>
+                            <option value="br">Breton - brezhoneg</option>
+                            <option value="bg">Bulgarian - български</option>
+                            <option value="ca">Catalan - català</option>
+                            <option value="ckb">Central Kurdish - کوردی (دەستنوسی عەرەبی)</option>
+                            <option value="zh">Chinese - 中文</option>
+                            <option value="zh-HK">Chinese (Hong Kong) - 中文（香港）</option>
+                            <option value="zh-CN">Chinese (Simplified) - 中文（简体）</option>
+                            <option value="zh-TW">Chinese (Traditional) - 中文（繁體）</option>
+                            <option value="co">Corsican</option>
+                            <option value="hr">Croatian - hrvatski</option>
+                            <option value="cs">Czech - čeština</option>
+                            <option value="da">Danish - dansk</option>
+                            <option value="nl">Dutch - Nederlands</option>
+                            <option value="en">English</option>
+                            <option value="en-AU">English (Australia)</option>
+                            <option value="en-CA">English (Canada)</option>
+                            <option value="en-IN">English (India)</option>
+                            <option value="en-NZ">English (New Zealand)</option>
+                            <option value="en-ZA">English (South Africa)</option>
+                            <option value="en-GB">English (United Kingdom)</option>
+                            <option value="en-US">English (United States)</option>
+                            <option value="eo">Esperanto - esperanto</option>
+                            <option value="et">Estonian - eesti</option>
+                            <option value="fo">Faroese - føroyskt</option>
+                            <option value="fil">Filipino</option>
+                            <option value="fi">Finnish - suomi</option>
+                            <option value="fr">French - français</option>
+                            <option value="fr-CA">French (Canada) - français (Canada)</option>
+                            <option value="fr-FR">French (France) - français (France)</option>
+                            <option value="fr-CH">French (Switzerland) - français (Suisse)</option>
+                            <option value="gl">Galician - galego</option>
+                            <option value="ka">Georgian - ქართული</option>
+                            <option value="de">German - Deutsch</option>
+                            <option value="de-AT">German (Austria) - Deutsch (Österreich)</option>
+                            <option value="de-DE">German (Germany) - Deutsch (Deutschland)</option>
+                            <option value="de-LI">German (Liechtenstein) - Deutsch (Liechtenstein)</option>
+                            <option value="de-CH">German (Switzerland) - Deutsch (Schweiz)</option>
+                            <option value="el">Greek - Ελληνικά</option>
+                            <option value="gn">Guarani</option>
+                            <option value="gu">Gujarati - ગુજરાતી</option>
+                            <option value="ha">Hausa</option>
+                            <option value="haw">Hawaiian - ʻŌlelo Hawaiʻi</option>
+                            <option value="he">Hebrew - עברית</option>
+                            <option value="hi">Hindi - हिन्दी</option>
+                            <option value="hu">Hungarian - magyar</option>
+                            <option value="is">Icelandic - íslenska</option>
+                            <option value="id">Indonesian - Indonesia</option>
+                            <option value="ia">Interlingua</option>
+                            <option value="ga">Irish - Gaeilge</option>
+                            <option value="it">Italian - italiano</option>
+                            <option value="it-IT">Italian (Italy) - italiano (Italia)</option>
+                            <option value="it-CH">Italian (Switzerland) - italiano (Svizzera)</option>
+                            <option value="ja">Japanese - 日本語</option>
+                            <option value="kn">Kannada - ಕನ್ನಡ</option>
+                            <option value="kk">Kazakh - қазақ тілі</option>
+                            <option value="km">Khmer - ខ្មែរ</option>
+                            <option value="ko">Korean - 한국어</option>
+                            <option value="ku">Kurdish - Kurdî</option>
+                            <option value="ky">Kyrgyz - кыргызча</option>
+                            <option value="lo">Lao - ລາວ</option>
+                            <option value="la">Latin</option>
+                            <option value="lv">Latvian - latviešu</option>
+                            <option value="ln">Lingala - lingála</option>
+                            <option value="lt">Lithuanian - lietuvių</option>
+                            <option value="mk">Macedonian - македонски</option>
+                            <option value="ms">Malay - Bahasa Melayu</option>
+                            <option value="ml">Malayalam - മലയാളം</option>
+                            <option value="mt">Maltese - Malti</option>
+                            <option value="mr">Marathi - मराठी</option>
+                            <option value="mn">Mongolian - монгол</option>
+                            <option value="ne">Nepali - नेपाली</option>
+                            <option value="no">Norwegian - norsk</option>
+                            <option value="nb">Norwegian Bokmål - norsk bokmål</option>
+                            <option value="nn">Norwegian Nynorsk - nynorsk</option>
+                            <option value="oc">Occitan</option>
+                            <option value="or">Oriya - ଓଡ଼ିଆ</option>
+                            <option value="om">Oromo - Oromoo</option>
+                            <option value="ps">Pashto - پښتو</option>
+                            <option value="fa">Persian - فارسی</option>
+                            <option value="pl">Polish - polski</option>
+                            <option value="pt">Portuguese - português</option>
+                            <option value="pt-BR">Portuguese (Brazil) - português (Brasil)</option>
+                            <option value="pt-PT">Portuguese (Portugal) - português (Portugal)</option>
+                            <option value="pa">Punjabi - ਪੰਜਾਬੀ</option>
+                            <option value="qu">Quechua</option>
+                            <option value="ro">Romanian - română</option>
+                            <option value="mo">Romanian (Moldova) - română (Moldova)</option>
+                            <option value="rm">Romansh - rumantsch</option>
+                            <option value="ru">Russian - русский</option>
+                            <option value="gd">Scottish Gaelic</option>
+                            <option value="sr">Serbian - српски</option>
+                            <option value="sh">Serbo-Croatian - Srpskohrvatski</option>
+                            <option value="sn">Shona - chiShona</option>
+                            <option value="sd">Sindhi</option>
+                            <option value="si">Sinhala - සිංහල</option>
+                            <option value="sk">Slovak - slovenčina</option>
+                            <option value="sl">Slovenian - slovenščina</option>
+                            <option value="so">Somali - Soomaali</option>
+                            <option value="st">Southern Sotho</option>
+                            <option value="es">Spanish - español</option>
+                            <option value="es-AR">Spanish (Argentina) - español (Argentina)</option>
+                            <option value="es-419">Spanish (Latin America) - español (Latinoamérica)</option>
+                            <option value="es-MX">Spanish (Mexico) - español (México)</option>
+                            <option value="es-ES">Spanish (Spain) - español (España)</option>
+                            <option value="es-US">Spanish (United States) - español (Estados Unidos)</option>
+                            <option value="su">Sundanese</option>
+                            <option value="sw">Swahili - Kiswahili</option>
+                            <option value="sv">Swedish - svenska</option>
+                            <option value="tg">Tajik - тоҷикӣ</option>
+                            <option value="ta">Tamil - தமிழ்</option>
+                            <option value="tt">Tatar</option>
+                            <option value="te">Telugu - తెలుగు</option>
+                            <option value="th">Thai - ไทย</option>
+                            <option value="ti">Tigrinya - ትግርኛ</option>
+                            <option value="to">Tongan - lea fakatonga</option>
+                            <option value="tr">Turkish - Türkçe</option>
+                            <option value="tk">Turkmen</option>
+                            <option value="tw">Twi</option>
+                            <option value="uk">Ukrainian - українська</option>
+                            <option value="ur">Urdu - اردو</option>
+                            <option value="ug">Uyghur</option>
+                            <option value="uz">Uzbek - o‘zbek</option>
+                            <option value="vi">Vietnamese - Tiếng Việt</option>
+                            <option value="wa">Walloon - wa</option>
+                            <option value="cy">Welsh - Cymraeg</option>
+                            <option value="fy">Western Frisian</option>
+                            <option value="xh">Xhosa</option>
+                            <option value="yi">Yiddish</option>
+                            <option value="yo">Yoruba - Èdè Yorùbá</option>
+                            <option value="zu">Zulu - isiZulu</option>
+                        </select>
+                    </td>
+
+                    <td><asp:Button ID="insertDeck" runat="server" Text="Add!!!" CssClass="btn btn-success spaced" OnClick="insertDeck_Click" /></td>
+                </tr>
+                <tr>
+                    <td colspan="3"><asp:Label ID="alertDeck" CssClass="txt round spaced" runat="server" Text="???"></asp:Label></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <asp:GridView ID="decksGrid" CssClass="table table-dark pink" HorizontalAlign="Center" AutoGenerateColumns="False" AlternatingRowStyle-BackColor="#212121" HeaderStyle-BackColor="#4cc9f0" AllowPaging="true" runat="server" OnRowCommand="RowCommand" OnPageIndexChanging="decksGrid_PageIndexChanging">
+        <Columns>
+
+            <asp:BoundField DataField="name" HeaderText="Name" />
+
+            <asp:BoundField DataField="description" HeaderText="Description" />
+
+            <asp:BoundField DataField="progress" HeaderText="Progress" />
+
+            <asp:BoundField DataField="next" HeaderText="Next Review:" />
+
+            <asp:BoundField DataField="language" HeaderText="Language" />
+
+            <asp:TemplateField>
+                <ItemTemplate>
+                    <asp:Button ID="review" runat="server" CssClass="txt round btn btn-primary" Text="Review!!!" CommandArgument="<%# ((GridViewRow)Container).RowIndex %>" CommandName="ReviewDeck" />
+
+                    <asp:Button ID="learn" runat="server" CssClass="txt round btn btn-info" Text="Learn..." CommandArgument="<%#((GridViewRow)Container).RowIndex %>" CommandName="LearnDeck" />
+                </ItemTemplate>
+            </asp:TemplateField>
+
+            <asp:TemplateField>
+                <ItemTemplate>
+                    <asp:Button ID="customize" runat="server" CssClass="txt round btn btn-warning" Text="Customize!!!" CommandArgument="<%# ((GridViewRow)Container).RowIndex %>" CommandName="CustomizeDeck" />
+
+                    <asp:Button ID="delete" runat="server" CssClass="txt round btn btn-danger" Text="Delete..." CommandArgument="<%# ((GridViewRow)Container).RowIndex %>" CommandName="DeleteDeck" OnClientClick="return confirm('Are you sure you want to delete this deck?')" />
+                </ItemTemplate>
+            </asp:TemplateField>
+
+            <asp:BoundField DataField="id" HeaderText="" ItemStyle-CssClass="hide" />
+
+        </Columns>
+
+        <PagerStyle ForeColor="#ffffff" CssClass="paging increase" HorizontalAlign="Center" />
+    </asp:GridView>
+</asp:Content>
+
+public partial class Decks : System.Web.UI.Page
+    {
+        DataTable userDecks;
+        Utilities.User user;
+        protected void Page_PreLoad(object sender, EventArgs e)
+        {
+            if (Session["user"] == null)
+                Response.Redirect("/UnauthorizedAccess.aspx");
+
+            user = (Utilities.User)Session["user"];
+            userDecks = Utilities.DBLink.GetDecksTableByUserId(user.id);
+        }
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            alert.Text = "";
+            alertDeck.Text = "";
+
+            if (userDecks.Rows.Count == 0)
+            {
+                alert.Text = "You have no decks... Create some!!";
+            }
+            else
+            {
+                alert.Text = "Create a new deck!!!";
+            }
+
+            if (!Page.IsPostBack)
+            {
+                decksGrid.DataSource = userDecks;
+                decksGrid.DataBind();
+            }
+        }
+
+        protected void insertDeck_Click(object sender, EventArgs e)
+        {
+            if (nameDeck.Text.Equals(""))
+            {
+                alertDeck.Text = "you have to fill the name!!!";
+                return;
+            }
+
+            Utilities.Deck deck = new Utilities.Deck(0, nameDeck.Text, descriptionDeck.Value, (double)0.0, DateTime.Today.ToString(Utilities.DBLink.datetimeFormat), language.Value, user.id);
+            Utilities.DBLink.InsertDeck(deck);
+            Response.Redirect(Request.Url.AbsoluteUri);
+        }
+
+        protected void RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            int index = Convert.ToInt32(e.CommandArgument.ToString());
+            String idDeck = decksGrid.Rows[index].Cells[7].Text;
+
+            if (e.CommandName.Equals("DeleteDeck"))
+            {
+                Utilities.DBLink.DeleteDeck(idDeck);
+
+                Response.Redirect(Request.Url.AbsoluteUri);
+            }
+            else if (e.CommandName.Equals("CustomizeDeck"))
+            {
+                Session["deck"] = Utilities.DBLink.GetDeckByDeckID(idDeck);
+                Response.Redirect("~/Customize.aspx");
+            }
+            else if (e.CommandName.Equals("ReviewDeck"))
+            {
+                Session["deck"] = Utilities.DBLink.GetDeckByDeckID(idDeck);
+                Session["cards"] = Utilities.DBLink.GetQueueCardsForReview(idDeck);
+                Response.Redirect("~/Study.aspx");
+            }
+            else if (e.CommandName.Equals("LearnDeck"))
+            {
+                Session["deck"] = Utilities.DBLink.GetDeckByDeckID(idDeck);
+                Session["cards"] = Utilities.DBLink.GetQueueCardsForLearn(idDeck);
+                Response.Redirect("~/Study.aspx");
+            }
+        }
+
+        protected void decksGrid_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            decksGrid.DataSource = userDecks;
+            decksGrid.PageIndex = e.NewPageIndex;
+            decksGrid.DataBind();
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<asp:GridView ID="cardsGrid" CssClass="table table-dark pink" HorizontalAlign="Center" AutoGenerateColumns="False" AlternatingRowStyle-BackColor="#212121" HeaderStyle-BackColor="#4cc9f0" AllowPaging="true" runat="server" OnRowCommand="RowCommand" OnPageIndexChanging="cardsGrid_PageIndexChanging">
+    <Columns>
+
+        <asp:BoundField DataField="front" HeaderText="Front" />
+
+        <asp:BoundField DataField="back" HeaderText="Back" />
+
+        <asp:BoundField DataField="next" HeaderText="Next review" />
+
+        <asp:BoundField DataField="level" HeaderText="Level" />
+
+        <asp:BoundField DataField="note" HeaderText="Note" />
+
+        <asp:TemplateField>
+            <ItemTemplate>
+                <asp:Button ID="alter" runat="server" CssClass="txt round btn btsn-warning" Text="Alter!!!" CommandArgument="<%# ((GridViewRow)Container).RowIndex %>" CommandName="AlterCard" />
+
+                <asp:Button ID="delete" runat="server" CssClass="txt round btn btn-danger" Text="Delete..." CommandArgument="<%# ((GridViewRow)Container).RowIndex %>" CommandName="DeleteCard" />
+            </ItemTemplate>
+        </asp:TemplateField>
+
+        <asp:BoundField DataField="id" HeaderText="" ItemStyle-CssClass="hide" />
+
+    </Columns>
+
+    <PagerStyle ForeColor="#ffffff" CssClass="paging increase" HorizontalAlign="Center" />
+</asp:GridView>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public partial class Customize : System.Web.UI.Page
+    {
+        Utilities.User user;
+        Utilities.Deck deck;
+        DataTable deckCards;
+        protected void Page_PreLoad(object sender, EventArgs e)
+        {
+            if (Session["user"] == null || Session["deck"] == null)
+                Response.Redirect("/UnauthorizedAccess.aspx");
+
+            user = (Utilities.User)Session["user"];
+            deck = (Utilities.Deck)Session["deck"];
+            deckCards = Utilities.DBLink.GetCardsTableByDeckId(deck.id);
+        }
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            alert.Text = "";
+            alertCard.Text = "";
+            alertDeck.Text = "";
+            title.InnerText = "Customize \"" + deck.name + "\" deck!";
+
+            if (deckCards.Rows.Count == 0)
+            {
+                alertCard.Text = "You don't have any cards... Create some for your deck!";
+            }
+
+            if (!Page.IsPostBack)
+            {
+                cardsGrid.DataSource = deckCards;
+                cardsGrid.DataBind();
+            }
+        }
+
+        protected void insertCard_Click(object sender, EventArgs e)
+        {
+            if (front.Text.Equals("") || back.Text.Equals(""))
+            {
+                alert.Text = "You have to fill in front and back!";
+                return;
+            }
+
+            Utilities.Card card = new Utilities.Card(0, front.Text, back.Text, DateTime.Now.ToString(Utilities.DBLink.datetimeFormat), 0, 0, 0, note.InnerText, deck.id);
+
+            Utilities.DBLink.InsertCard(card);
+            cardsGrid.DataBind();
+            Response.Redirect(Request.Url.AbsoluteUri);
+        }
+
+        protected void RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName.Equals("DeleteCard"))
+            {
+                int index = Convert.ToInt32(e.CommandArgument.ToString());
+
+                String idCard = cardsGrid.Rows[index].Cells[6].Text;
+                Utilities.DBLink.DeleteCard(idCard);
+
+                deckCards.Rows[index].Delete();
+                cardsGrid.DataBind();
+                Response.Redirect(Request.Url.AbsoluteUri);
+            }
+            else if (e.CommandName.Equals("AlterCard"))
+            {
+                // ALTER
+                cardsGrid.DataBind();
+                Response.Redirect(Request.Url.AbsoluteUri);
+
+            }
+        }
+
+        protected void cardsGrid_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            cardsGrid.DataSource = deckCards;
+            cardsGrid.PageIndex = e.NewPageIndex;
+            cardsGrid.DataBind();
+        }
+
+        protected void alterDeck_Click(object sender, EventArgs e)
+        {
+            if (nameDeck.Text.Equals(""))
+            {
+                alertDeck.Text = "you have to fill the name!!!";
+                return;
+            }
+
+            deck.name = nameDeck.Text;
+            deck.description = descriptionDeck.InnerText;
+            deck.language = language.Value;
+
+            Utilities.DBLink.UpdateDeck(deck);
+            cardsGrid.DataBind();
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data;
+
+namespace FlashcardLab
+{
+    public partial class Study : System.Web.UI.Page
+    {
+        Utilities.User user;
+        Utilities.Deck deck;
+        Queue<Utilities.Card>
+    cards;
+    Queue<Utilities.BilateralCard>
+        bicards;
+        bool isDual = false;
+        protected void Page_PreLoad(object sender, EventArgs e)
+        {
+        if (Session["user"] == null || Session["deckStudy"] == null)
+        Response.Redirect("/UnauthorizedAccess.aspx");
+
+        user = (Utilities.User)Session["user"];
+        deck = (Utilities.Deck)Session["deckStudy"];
+        HttpCookie cookie = Request.Cookies[deck.id.ToString()];
+
+        if (cookie == null)
+        {
+        cards = (Queue<Utilities.Card>
+            )Session["cardsStudy"];
+            }
+            else
+            {
+            isDual = true;
+            bicards = (Queue<Utilities.BilateralCard>
+                )Session["cardsStudy"];
+                }
+                }
+                protected void Page_Load(object sender, EventArgs e)
+                {
+                if (!isDual)
+                {
+                if (cards == null)
+                {
+                Response.Redirect("~/Customize.aspx");
+                }
+                if (cards.Count == 0)
+                {
+                Session.Remove("cards");
+                Utilities.DBLink.UpdateDeckNextByEarliestDate(deck.id);
+                Utilities.DBLink.UpdateDeckProgress(deck.id);
+                Response.Redirect("~/Customize.aspx");
+                }
+
+                text.InnerText = cards.Peek().front;
+                }
+                else
+                {
+                if (bicards == null)
+                {
+                Response.Redirect("~/Customize.aspx");
+                }
+                if (bicards.Count == 0)
+                {
+                Session.Remove("cardsStudy");
+                Utilities.DBLink.UpdateDeckNextByEarliestDate(deck.id);
+                Utilities.DBLink.UpdateDeckProgress(deck.id);
+                Response.Redirect("~/Customize.aspx");
+                }
+
+                text.InnerText = bicards.Peek().front;
+                }
+
+                answerBox.Focus();
+                }
+
+                protected void submit_Click(object sender, EventArgs e)
+                {
+                answerBox.Text = answerBox.Text.ToLower();
+
+
+
+                if (!isDual)
+                {
+                if (!cards.Peek().back.Equals(answerBox.Text))
+                {
+                if (cards.Peek().HasTypo(answerBox.Text))
+                {
+                alert.Style.Add("background-color", "GoldenRod");
+                alert.Text = "Perhaps you made a typo?";
+                animWrapper.Style.Add("animation", "dive 0.8s");
+                return;
+                }
+                else
+                {
+                cards.Peek().Answered(false);
+                alert.Style.Add("background-color", "Crimson");
+                alert.Text = "WRONG!!!";
+                animWrapper.Style.Add("animation", "shake 0.8s");
+
+                previous.Text = cards.Peek().front + " <|>
+                    " + cards.Peek().back;
+                    note.Text = cards.Peek().note;
+                    cards.Enqueue(cards.Dequeue());
+                    }
+                    }
+                    else
+                    {
+                    cards.Peek().Answered(true);
+                    alert.Style.Add("background-color", "Green");
+                    animWrapper.Style.Add("animation", "none");
+                    alert.Text = "TRUE!!!";
+
+                    previous.Text = cards.Peek().front + " <|>
+                        " + cards.Peek().back;
+                        note.Text = cards.Peek().note;
+                        cards.Dequeue();
+                        }
+
+                        alert.Text += "    (cards left: " + cards.Count + ")";
+
+                        if (cards.Count == 0)
+                        {
+                        Response.Redirect("~/Customize.aspx");
+                        }
+
+                        text.InnerText = cards.Peek().front;
+                        }
+                        else
+                        {
+                        if (!bicards.Peek().back.Equals(answerBox.Text))
+                        {
+                        if (bicards.Peek().HasTypo(answerBox.Text))
+                        {
+                        alert.Style.Add("background-color", "GoldenRod");
+                        alert.Text = "Perhaps you made a typo?";
+                        animWrapper.Style.Add("animation", "dive 0.8s");
+                        return;
+                        }
+                        else
+                        {
+                        bicards.Peek().Answered(false);
+                        alert.Style.Add("background-color", "Crimson");
+                        alert.Text = "WRONG!!!";
+                        animWrapper.Style.Add("animation", "shake 0.8s");
+
+                        previous.Text = bicards.Peek().front + " <|>
+                            " + bicards.Peek().back;
+                            note.Text = bicards.Peek().note;
+                            bicards.Enqueue(bicards.Dequeue());
+                            }
+                            }
+                            else
+                            {
+                            bicards.Peek().Answered(true);
+                            alert.Style.Add("background-color", "Green");
+                            animWrapper.Style.Add("animation", "none");
+                            alert.Text = "TRUE!!!";
+
+                            previous.Text = bicards.Peek().front + " <|>
+                                " + bicards.Peek().back;
+                                note.Text = bicards.Peek().note;
+                                bicards.Dequeue();
+                                }
+
+                                alert.Text += "    (cards left: " + bicards.Count + ")";
+
+                                if (bicards.Count == 0)
+                                {
+                                Response.Redirect("~/Customize.aspx");
+                                }
+
+                                text.InnerText = bicards.Peek().front;
+                                }
+
+
+
+
+
+
+                                answerBox.Text = "";
+                                }
+                                }
+                                }

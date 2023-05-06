@@ -1,0 +1,20 @@
+﻿body {
+}
+
+#sharedGrid {
+    border-style: none;
+    border-width: 0px;
+}
+
+.deckTitle{
+    font-size: x-large;
+}
+
+.deckSub{
+    font-size: small;
+}
+
+.table {
+    width: 100%;
+    table-layout: fixed;
+}

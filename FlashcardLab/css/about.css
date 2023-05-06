@@ -1,0 +1,10 @@
+﻿body {
+    background-image: url(../images/background/op2reduced.png);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.txt-resize{
+    font-size: 2.5em;
+}

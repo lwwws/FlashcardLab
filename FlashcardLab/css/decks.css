@@ -1,0 +1,105 @@
+﻿body {
+}
+
+#deckForm{
+    padding: 10px;
+}
+
+.equal {
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+}
+
+@media (min-width: 768px) {
+    .row.equal {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+.panel-body, .panel-heading {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.panel, .panel-body{
+    background-color: #161616;
+    border: none;
+    color: whitesmoke;
+}
+
+.panel-body {
+    color: #c7c7c7;
+}
+
+.dpanel {
+    transition: transform .2s;
+}
+
+.dfooter {
+    background-color: #232323;
+}
+
+.dpanel:hover {
+    transform: scale(1.05);
+}
+
+.dpanel:hover > .dfooter {
+    background-color: #272727;
+}
+
+.dpanel:hover > .dbody {
+    background-color: #1b1b1b;
+}
+
+.spanel {
+    background-color: inherit;
+    transform: scale(1.05);
+}
+
+.sbody {
+    background-color: #1b1b1b;
+}
+
+.sfooter {
+    background-color: #272727;
+}
+
+.slide {
+    animation: growDown 200ms ease-out forwards;
+    transform-origin: top center;
+}
+
+.item-deck {
+    width: 100%;
+    max-width: 400px;
+    height: 100%;
+    margin: 5px;
+}
+
+
+@keyframes growDown {
+    0% {
+        transform: scaleY(0)
+    }
+
+    100% {
+        transform: scaleY(1)
+    }
+}
+
+.langs{
+    margin: auto;
+}
+
+.ihead, ipanel {
+    background-color: #232323 !important;
+}
+
+.pager a{
+    background-color: white;
+    border-radius: 5px;
+    border-color: #000000;
+    padding: 5px;
+}
