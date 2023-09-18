@@ -2,25 +2,25 @@
 * FlashcardLab is a web application that helps people learn different languages via flashcards using Spaced Repetition System (SRS)
 
 <p align="center">
-  <img width="601" alt="image" src="https://github.com/lwwws/FlashcardLab/assets/77572603/d46a34c4-a05e-49f2-9b87-f143429c3f40">
+  <img width="602" alt="image" src="https://github.com/lwwws/FlashcardLab/assets/77572603/ca0ec4cb-a0f4-4c9b-9514-67735beedd93">
 </p>
 
 * Create personal decks and customize your cards!
   
 <p align="center">
-  <img width="610" alt="image" src="https://github.com/lwwws/FlashcardLab/assets/77572603/c4534757-09bd-4c99-aa18-5182f22dca10">
+  <img width="610" alt="image" src="https://github.com/lwwws/FlashcardLab/assets/77572603/91c2528d-8264-4185-93eb-6956a75c0c3b">
 </p>
 
 * Option to download decks of other users, and upload your own through the workshop!
 
 <p align="center">
-  <img width="571" alt="image" src="https://github.com/lwwws/FlashcardLab/assets/77572603/21524296-28a3-406a-a9ba-f998575cc70b">
+  <img width="571" alt="image" src="https://github.com/lwwws/FlashcardLab/assets/77572603/6acf268e-2904-4696-8f4c-f42fec4d930f">
 </p>
 
 * Get statistics for each deck to check your progress
 
 <p align="center">
-  <img width="575" alt="image" src="https://github.com/lwwws/FlashcardLab/assets/77572603/127676be-5d3e-487f-a89b-796b9a82005b">
+  <img width="575" alt="image" src="https://github.com/lwwws/FlashcardLab/assets/77572603/f16caf97-a1d8-48fe-90f2-f750a0722c26">
 </p>
 
 
@@ -33,5 +33,5 @@
 * chart.js
 * jvectormap
 <div align="center">
-<img src="https://github.com/lwwws/FlashcardLab/assets/77572603/f430be0f-72ab-47f9-9415-1c83bff4a110" width="100" height="100" />
+  <img src="https://github.com/lwwws/FlashcardLab/assets/77572603/6dec0a22-bf1c-4437-8c27-d24372f2d744)" width="100" height="100" />
 </div>
