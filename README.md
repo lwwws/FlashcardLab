@@ -17,7 +17,7 @@
   <img width="571" alt="image" src="https://github.com/lwwws/FlashcardLab/assets/77572603/21524296-28a3-406a-a9ba-f998575cc70b">
 </p>
 
-* Get statistics for each deck and check your progress
+* Get statistics for each deck to check your progress
 
 <p align="center">
   <img width="575" alt="image" src="https://github.com/lwwws/FlashcardLab/assets/77572603/127676be-5d3e-487f-a89b-796b9a82005b">
